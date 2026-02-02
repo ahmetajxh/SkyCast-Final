@@ -1,0 +1,97 @@
+========================================
+WEATHER APP - QUICK START GUIDE
+========================================
+
+✅ SETUP COMPLETE - READY TO RUN!
+
+All components have been built and tested:
+- ✓ C# CLI Utilities
+- ✓ ASP.NET Core Web API
+- ✓ Python/Flask dependencies
+- ✓ All systems operational
+
+
+========================================
+HOW TO RUN TOMORROW
+========================================
+
+OPTION 1: Flask App (Main Application)
+---------------------------------------
+Open PowerShell and run:
+
+    cd "c:\Users\User\Desktop\Final Weather App\weather app"
+    .venv\Scripts\python.exe app.py
+
+Then open your browser to: http://localhost:8000
+
+
+OPTION 2: ASP.NET Web API
+---------------------------------------
+Open PowerShell and run:
+
+    cd "c:\Users\User\Desktop\Final Weather App\weather app"
+    dotnet run --project WeatherAPI.csproj
+
+API available at: http://localhost:5000
+Swagger UI at: http://localhost:5000/swagger
+
+
+OPTION 3: Both Servers (Full Stack)
+---------------------------------------
+Terminal 1 - Flask:
+    cd "c:\Users\User\Desktop\Final Weather App\weather app"
+    .venv\Scripts\python.exe app.py
+
+Terminal 2 - ASP.NET:
+    cd "c:\Users\User\Desktop\Final Weather App\weather app"
+    dotnet run --project WeatherAPI.csproj
+
+
+========================================
+VERIFICATION
+========================================
+
+To verify everything is working:
+
+1. Flask Health Check:
+   http://localhost:8000/api/health
+
+2. ASP.NET Health Check:
+   http://localhost:5000/api/health
+
+3. CLI Test:
+   bin\Release\net10.0\WeatherAppUtils.exe validate-city "London"
+
+
+========================================
+FEATURES AVAILABLE
+========================================
+
+Flask (Port 8000):
+- Full web interface
+- Weather data & forecasts
+- Air quality monitoring
+- Interactive chatbot
+- All external API integrations
+
+ASP.NET (Port 5000):
+- High-performance utility endpoints
+- Validation services
+- Temperature conversion
+- Wind direction lookup
+- AQI categorization
+- Interactive Swagger documentation
+
+
+========================================
+NOTES
+========================================
+
+- Both servers are independent
+- Flask can run alone (full features)
+- ASP.NET can run alone (API only)
+- Run both for complete dual-API architecture
+- No additional setup needed - everything is ready!
+
+
+🌤️ Enjoy your Weather App!
