@@ -198,29 +198,33 @@ namespace WeatherApp.API
             // C# Utility endpoints
             app.MapGet("/api/validate/city", (string name) =>
             {
-                var result = ValidationUtils.ValidateCityName(name);
+                var valid = ValidationUtils.IsValidCityName(name);
                 return Results.Ok(new
                 {
-                    valid = result.Item1,
-                    error = result.Item2,
+                    valid = valid,
+                    error = valid ? null : "Invalid city name",
                     input = name
                 });
             });
 
             app.MapGet("/api/validate/coordinates", (string lat, string lon) =>
             {
-                var result = ValidationUtils.ValidateCoordinates(lat, lon);
+                bool valid = false;
+                if (double.TryParse(lat, out double latitude) && double.TryParse(lon, out double longitude))
+                {
+                    valid = ValidationUtils.IsValidCoordinates(latitude, longitude);
+                }
                 return Results.Ok(new
                 {
-                    valid = result.Item1,
-                    error = result.Item2,
+                    valid = valid,
+                    error = valid ? null : "Invalid coordinates",
                     latitude = lat,
                     longitude = lon
                 });
             });
 
             // Temperature conversion endpoints
-            app.MapGet("/api/temperature/format", (double celsius, char unit = 'C') =>
+            app.MapGet("/api/temperature/format", (double celsius, string unit = "C") =>
             {
                 var formatted = TemperatureUtils.FormatTemperature(celsius, unit);
                 return Results.Ok(new
@@ -266,12 +270,12 @@ namespace WeatherApp.API
             app.MapGet("/api/aqi/categorize", (int index) =>
             {
                 var category = AQIUtils.CategorizeAQI(index);
-                var recommendation = AQIUtils.GetAQIRecommendation(index);
+                var color = AQIUtils.GetAQIColor(index);
                 return Results.Ok(new
                 {
                     index = index,
                     category = category,
-                    recommendation = recommendation
+                    color = color
                 });
             });
 
