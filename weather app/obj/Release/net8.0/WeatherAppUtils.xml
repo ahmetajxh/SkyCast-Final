@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>WeatherAppUtils</name>
+    </assembly>
+    <members>
+        <member name="T:WeatherApp.CLI.Program">
+            <summary>
+            Command-line interface for C# weather utilities
+            Can be called from Python via subprocess
+            </summary>
+        </member>
+        <member name="T:WeatherApp.Utils.ValidationUtils">
+            <summary>
+            Weather utility functions - C# implementation
+            Core business logic for the Weather App
+            </summary>
+        </member>
+        <member name="M:WeatherApp.Utils.ValidationUtils.ValidateCityName(System.String)">
+            <summary>
+            Validate city name input
+            </summary>
+        </member>
+        <member name="M:WeatherApp.Utils.ValidationUtils.ValidateCoordinates(System.String,System.String)">
+            <summary>
+            Validate latitude and longitude coordinates
+            </summary>
+        </member>
+        <member name="T:WeatherApp.Utils.TemperatureUtils">
+            <summary>
+            Temperature formatting utilities
+            </summary>
+        </member>
+        <member name="M:WeatherApp.Utils.TemperatureUtils.FormatTemperature(System.Double,System.Char)">
+            <summary>
+            Format temperature in Celsius or Fahrenheit
+            </summary>
+        </member>
+        <member name="M:WeatherApp.Utils.TemperatureUtils.CelsiusToFahrenheit(System.Double)">
+            <summary>
+            Convert Celsius to Fahrenheit
+            </summary>
+        </member>
+        <member name="M:WeatherApp.Utils.TemperatureUtils.FahrenheitToCelsius(System.Double)">
+            <summary>
+            Convert Fahrenheit to Celsius
+            </summary>
+        </member>
+        <member name="T:WeatherApp.Utils.AQIUtils">
+            <summary>
+            Air Quality Index utilities
+            </summary>
+        </member>
+        <member name="M:WeatherApp.Utils.AQIUtils.CategorizeAQI(System.Nullable{System.Int32})">
+            <summary>
+            Categorize AQI index into descriptive labels
+            </summary>
+        </member>
+        <member name="M:WeatherApp.Utils.AQIUtils.GetAQIRecommendation(System.Nullable{System.Int32})">
+            <summary>
+            Get health recommendation based on AQI
+            </summary>
+        </member>
+        <member name="T:WeatherApp.Utils.WindUtils">
+            <summary>
+            Wind speed utilities
+            </summary>
+        </member>
+        <member name="M:WeatherApp.Utils.WindUtils.GetWindDirection(System.Double)">
+            <summary>
+            Get wind direction name from degrees
+            </summary>
+        </member>
+        <member name="M:WeatherApp.Utils.WindUtils.MetersPerSecondToKmh(System.Double)">
+            <summary>
+            Convert wind speed from m/s to km/h
+            </summary>
+        </member>
+        <member name="M:WeatherApp.Utils.WindUtils.MetersPerSecondToMph(System.Double)">
+            <summary>
+            Convert wind speed from m/s to mph
+            </summary>
+        </member>
+        <member name="T:WeatherApp.Utils.ApiResponse">
+            <summary>
+            JSON response builder for consistent API responses
+            </summary>
+        </member>
+        <member name="T:WeatherApp.Utils.GeocodingResult">
+            <summary>
+            Weather Data Models
+            </summary>
+        </member>
+    </members>
+</doc>
